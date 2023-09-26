@@ -1,0 +1,61 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.lovecaa.pycharm-bug-demo</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>AirScript</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="1132454419@qq.com" url="https://www.lovecaa.com">请丶随便</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    <h3>A Plugins for AirScript can be developed on Pycharm</h3>
+    <ul>
+        <li>Create an AirScript project</li>
+        <li>Developing an AirScript project</li>
+        <li>Run AirScript project</li>
+    </ul>
+
+    <h3>在Pycharm上可以开发AirScript的插件</h3>
+     <ul>
+        <li>创建AirScript项目</li>
+        <li>开发AirScript项目</li>
+        <li>运行AirScript项目</li>
+    </ul>
+  ]]></description>
+
+
+    <change-notes><![CDATA[
+    <h3>1.0.0</h3>
+    <ul>
+        <li>初始化BUG</li>
+    </ul>
+    <br>
+  ]]></change-notes>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.python</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!--服务的注册参考：https://plugins.jetbrains.com/docs/intellij/plugin-services.html#retrieving-a-service-->
+        <!--运行控制台-->
+        <toolWindow id="AirScriptConsole" anchor="bottom"
+                    icon="AirScriptIcons.ToolWindow"
+                    factoryClass="com.lovecaa.airscript.ui.AirScriptToolWindow"/>
+    </extensions>
+
+
+    <actions>
+        <!-- 运行-->
+        <action id="AS_RunProject" class="com.lovecaa.airscript.action.RunProjectAction"/>
+    </actions>
+</idea-plugin>
